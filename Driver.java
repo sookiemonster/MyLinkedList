@@ -20,11 +20,15 @@ public class Driver {
     // LINKED LIST TESTING
     MyLinkedList a = new MyLinkedList();
     System.out.println(a);
+    System.out.println(a.reverseToString());
     a.add("1");
     System.out.println(a);
+    System.out.println(a.reverseToString());
     a.add("2");
     System.out.println(a);
+    System.out.println(a.reverseToString());
     a.add("3");
     System.out.println(a);
+    System.out.println(a.reverseToString());
   }
 }

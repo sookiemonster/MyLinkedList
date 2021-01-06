@@ -38,4 +38,17 @@ public class MyLinkedList {
     }
     return result +"}";
   }
+
+  public String reverseToString() {
+    Node current = end;
+    String result = "{";
+    while (current != null) {
+      result += current.toString();
+      if (current.getPrev() != null) {
+        result += ", ";
+      }
+      current = current.getPrev();
+    }
+    return result +"}";
+  }
 }
