@@ -19,10 +19,23 @@ public class MyLinkedList {
       this.end = temp;
     } else {
       Node temp = new Node(value, null, this.end);
-      this.end = temp;
       this.end.setNext(temp);
+      this.end = temp;
     }
     size++;
     return true;
+  }
+
+  public String toString() {
+    Node current = start;
+    String result = "{";
+    while (current != null) {
+      result += current.toString();
+      if (current.getNext() != null) {
+        result += ", ";
+      }
+      current = current.getNext();
+    }
+    return result +"}";
   }
 }
