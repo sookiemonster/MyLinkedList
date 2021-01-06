@@ -20,6 +20,7 @@ public class MyLinkedList {
     } else {
       Node temp = new Node(value, null, this.end);
       this.end = temp;
+      this.end.setNext(temp);
     }
     size++;
     return true;

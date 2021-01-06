@@ -37,4 +37,8 @@ public class Node {
     this.prev = value;
     return temp;
   }
+
+  public String toString() {
+    return "" + this.getData();
+  }
 }
