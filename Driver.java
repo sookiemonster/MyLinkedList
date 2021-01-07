@@ -37,5 +37,8 @@ public class Driver {
     System.out.println(a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    for (int i = 0; i < a.size(); i++) {
+      System.out.println(a.get(i));
+    }
   }
 }

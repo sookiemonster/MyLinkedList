@@ -36,6 +36,7 @@ public class MyLinkedList {
     } else if (index == 0){
       element.setNext(toIndex(index));
       element.getNext().setPrev(element);
+      size++;
     } else {
       Node temp = toIndex(index);
       element.setNext(temp);
@@ -44,7 +45,12 @@ public class MyLinkedList {
 
       element.setPrev(temp2);
       temp2.setNext(element);
+      size++;
     }
+  }
+
+  public String get(int index) {
+    return toIndex(index).toString();
   }
 
   private Node toIndex(int n) {
