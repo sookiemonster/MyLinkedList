@@ -27,8 +27,9 @@ public class MyLinkedList {
   }
 
   public void add(int index, String value) {
-    if (index > this.size()) {
-      throw new IndexOutOfBoundsException("Received: " + index);
+    if (index > this.size() || index < 0) {
+      throw new IndexOutOfBoundsException("Received " + index + " " +
+        "when size is " + this.size());
     }
     Node element = new Node(value, null, null);
     if ((index == 0 && this.size() == 0) || (index == this.size())) {
@@ -36,6 +37,7 @@ public class MyLinkedList {
     } else if (index == 0){
       element.setNext(toIndex(index));
       element.getNext().setPrev(element);
+      start = element;
       size++;
     } else {
       Node temp = toIndex(index);
@@ -51,6 +53,30 @@ public class MyLinkedList {
 
   public String get(int index) {
     return toIndex(index).toString();
+  }
+
+  public String set (int index, String value) {
+    if (index >= this.size() || index < 0) {
+      throw new IndexOutOfBoundsException("Received " + index + " " +
+        "when size is " + this.size());
+    }
+
+    String original = get(index);
+    if (index == 0) {
+      Node element = new Node(value, start.getNext(), null);
+      start.getNext().setPrev(element);
+      start = element;
+    } else if (index == this.size()-1) {
+      Node element = new Node(value, null, end.getPrev());
+      end.getPrev().setNext(element);
+      end = element;
+    } else {
+      Node temp = toIndex(index);
+      Node element = new Node(value, temp.getNext(), temp.getPrev());
+      temp.getNext().setPrev(element);
+      temp.getPrev().setNext(element);
+    }
+    return original;
   }
 
   private Node toIndex(int n) {

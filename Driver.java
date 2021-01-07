@@ -40,5 +40,23 @@ public class Driver {
     for (int i = 0; i < a.size(); i++) {
       System.out.println(a.get(i));
     }
+    System.out.println();
+    System.out.println(a.set(0, "start"));
+    System.out.println(a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+
+    System.out.println(a.set(a.size()-1, "end"));
+    System.out.println(a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+
+    System.out.println(a.set(1, "mid"));
+    System.out.println(a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+
+    // a.set(-1, "nope"); ERRORS
+    // a.set(a.size(), "no"); ERRORS
   }
 }
