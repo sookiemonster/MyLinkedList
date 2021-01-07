@@ -26,6 +26,37 @@ public class MyLinkedList {
     return true;
   }
 
+  public void add(int index, String value) {
+    if (index > this.size()) {
+      throw new IndexOutOfBoundsException("Received: " + index);
+    }
+    Node element = new Node(value, null, null);
+    if ((index == 0 && this.size() == 0) || (index == this.size())) {
+      this.add(value);
+    } else if (index == 0){
+      element.setNext(toIndex(index));
+      element.getNext().setPrev(element);
+    } else {
+      Node temp = toIndex(index);
+      element.setNext(temp);
+      Node temp2 = temp.getPrev();
+      temp.setPrev(element);
+
+      element.setPrev(temp2);
+      temp2.setNext(element);
+    }
+  }
+
+  private Node toIndex(int n) {
+    Node current = start;
+    int counter = 0;
+    while (current != null && counter < n) {
+      current = current.getNext();
+      counter++;
+    }
+    return current;
+  }
+
   public String toString() {
     Node current = start;
     String result = "{";

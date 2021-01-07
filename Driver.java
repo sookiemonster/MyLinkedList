@@ -22,6 +22,7 @@ public class Driver {
     System.out.println(a);
     System.out.println(a.size());
     System.out.println(a.reverseToString());
+    a.add(0, "0");
     a.add("1");
     System.out.println(a.size());
     System.out.println(a);
@@ -31,6 +32,8 @@ public class Driver {
     System.out.println(a);
     System.out.println(a.reverseToString());
     a.add("3");
+    a.add(4, "bb");
+    a.add(4, "4.4");
     System.out.println(a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
