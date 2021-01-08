@@ -51,6 +51,45 @@ public class MyLinkedList {
     }
   }
 
+  public String remove(int index) {
+    if (index >= this.size() || index < 0) {
+      throw new IndexOutOfBoundsException("Received " + index + " " +
+        "when size is " + this.size());
+    }
+    if (index == 0 && this.size() == 1) {
+      String temp = this.start.toString();
+      this.start = null;
+      this.end = null;
+      size--;
+      return temp;
+    } else if (index == 0 && this.size() > 1) {
+      Node temp = this.start;
+      this.start = temp.getNext();
+      this.start.setPrev(null);
+      temp.setNext(null);
+      size--;
+      return temp.toString();
+    } else if (index == this.size()-1 && this.size() > 1) {
+      Node temp = this.end;
+      this.end = temp.getPrev();
+      this.end.setNext(null);
+      temp.setPrev(null);
+      size--;
+      return temp.toString();
+    } else {
+      Node temp = toIndex(index);
+      Node tempNext = temp.getNext();
+      Node tempPrev = temp.getPrev();
+
+      tempNext.setPrev(tempPrev);
+      tempPrev.setNext(tempNext);
+      temp.setNext(null);
+      temp.setPrev(null);
+      size--;
+      return temp.toString();
+    }
+  }
+
   public String get(int index) {
     return toIndex(index).toString();
   }

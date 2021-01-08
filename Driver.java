@@ -20,41 +20,86 @@ public class Driver {
     // LINKED LIST TESTING
     MyLinkedList a = new MyLinkedList();
     System.out.println(a);
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a.reverseToString());
+    System.out.println();
     a.add(0, "0");
     a.add("1");
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
     a.add("2");
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
     a.add("3");
     a.add(4, "bb");
-    a.add(4, "4.4");
-    System.out.println(a.size());
+    a.add(4, "4");
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
     for (int i = 0; i < a.size(); i++) {
       System.out.println(a.get(i));
     }
     System.out.println();
     System.out.println(a.set(0, "start"));
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
 
     System.out.println(a.set(a.size()-1, "end"));
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
 
     System.out.println(a.set(1, "mid"));
-    System.out.println(a.size());
+    System.out.println("Size: " + a.size());
     System.out.println(a);
     System.out.println(a.reverseToString());
+    System.out.println();
+
+    System.out.println(a.remove(1));
+    System.out.println("Size: " + a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+    System.out.println();
+
+    a.add(1, "owo");
+    System.out.println("Size: " + a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+    System.out.println();
+
+    System.out.println(a.remove(0));
+    System.out.println("Size: " + a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+    System.out.println();
+
+    System.out.println(a.remove(a.size() - 1));
+    System.out.println("Size: " + a.size());
+    System.out.println(a);
+    System.out.println(a.reverseToString());
+    System.out.println();
+
+    MyLinkedList b = new MyLinkedList();
+    b.add("new");
+    System.out.println("Size: " + b.size());
+    System.out.println(b);
+    System.out.println(b.reverseToString());
+    System.out.println(b.remove(0));
+    System.out.println(b);
+    System.out.println(b.reverseToString());
+    System.out.println();
+    b.add("again"); b.add("anotherone");
+    System.out.println(b);
+    System.out.println(b.reverseToString());
+    System.out.println();
 
     // a.set(-1, "nope"); ERRORS
     // a.set(a.size(), "no"); ERRORS
