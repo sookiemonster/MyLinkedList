@@ -101,6 +101,14 @@ public class Driver {
     System.out.println(b.reverseToString());
     System.out.println();
 
+    System.out.println("A: " + a);
+    System.out.println("B: " + b);
+    a.extend(b);
+    System.out.println("Size of A: " + a.size());
+    System.out.println("Size of B: " + b.size());
+    System.out.println(a);
+    System.out.println(b);
+
     // a.set(-1, "nope"); ERRORS
     // a.set(a.size(), "no"); ERRORS
   }

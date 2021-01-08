@@ -56,12 +56,14 @@ public class MyLinkedList {
       throw new IndexOutOfBoundsException("Received " + index + " " +
         "when size is " + this.size());
     }
+
     if (index == 0 && this.size() == 1) {
       String temp = this.start.toString();
       this.start = null;
       this.end = null;
       size--;
       return temp;
+
     } else if (index == 0 && this.size() > 1) {
       Node temp = this.start;
       this.start = temp.getNext();
@@ -69,6 +71,7 @@ public class MyLinkedList {
       temp.setNext(null);
       size--;
       return temp.toString();
+
     } else if (index == this.size()-1 && this.size() > 1) {
       Node temp = this.end;
       this.end = temp.getPrev();
@@ -76,6 +79,7 @@ public class MyLinkedList {
       temp.setPrev(null);
       size--;
       return temp.toString();
+
     } else {
       Node temp = toIndex(index);
       Node tempNext = temp.getNext();
@@ -88,6 +92,16 @@ public class MyLinkedList {
       size--;
       return temp.toString();
     }
+  }
+
+  public void extend(MyLinkedList other) {
+    this.end.setNext(other.start);
+    other.start.setPrev(this.end);
+
+    this.size += other.size();
+    other.size = 0;
+    other.start = null;
+    other.end = null;
   }
 
   public String get(int index) {
